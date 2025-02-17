@@ -90,7 +90,7 @@ export default function About() {
         <motion.div variants={itemVariants}>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold my-32 mb-8">
             <span className="text-white">Our</span>{' '}
-            <span className="bg-gradient-to-r from-[#0CC0DF] to-[#bc6c25] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#bc6c25] to-[#bc6c25] bg-clip-text text-transparent">
               Team
             </span>
           </h1>
@@ -119,13 +119,13 @@ export default function About() {
                     className="object-cover object-center scale-75 group-hover:scale-85 transition-transform duration-300"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#0CC0DF] transition-colors">{member.name}</h3>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#bc6c25] transition-colors">{member.name}</h3>
                 <p className="text-gray-300 mb-4 group-hover:text-white transition-colors">{member.role}</p>
                 <a
                   href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#9945FF] hover:text-[#0CC0DF] transition-colors flex items-center gap-2 group-hover:translate-x-2 duration-300"
+                  className="text-[#bc6c25] hover:text-[#bc6c25] transition-colors flex items-center gap-2 group-hover:translate-x-2 duration-300"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -134,7 +134,7 @@ export default function About() {
                 </a>
                 <a
                   href={`mailto:${member.email}`}
-                  className="text-[#9945FF] hover:text-[#0CC0DF] transition-colors flex items-center gap-2 mt-2 group-hover:translate-x-2 duration-300"
+                  className="text-[#bc6c25] hover:text-[#bc6c25] transition-colors flex items-center gap-2 mt-2 group-hover:translate-x-2 duration-300"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
@@ -149,7 +149,7 @@ export default function About() {
           {/* Carousel Section using DaisyUI */}
           <motion.div variants={itemVariants} className="my-24 pt-40">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white">
-              Community <span className="bg-gradient-to-r from-[#0CC0DF] to-[#bc6c25] bg-clip-text text-transparent">Milestones</span>
+              Community <span className="bg-gradient-to-r from-[#bc6c25] to-[#bc6c25] bg-clip-text text-transparent">Milestones</span>
             </h2>
 
             <div className="carousel w-full">
@@ -208,7 +208,7 @@ export default function About() {
                 <a
                   key={index}
                   href={`#slide${index}`}
-                  className="btn btn-xs bg-black/50 border-none hover:bg-[#0CC0DF]/50"
+                  className="btn btn-xs bg-black/50 border-none hover:bg-[#bc6c25]/50"
                 >
                   {index + 1}
                 </a>
