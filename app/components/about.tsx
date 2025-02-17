@@ -147,7 +147,7 @@ export default function About() {
           </div>
 
           {/* Carousel Section using DaisyUI */}
-          <motion.div variants={itemVariants} className="my-24">
+          <motion.div variants={itemVariants} className="my-24 pt-40">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white">
               Community <span className="bg-gradient-to-r from-[#0CC0DF] to-[#bc6c25] bg-clip-text text-transparent">Milestones</span>
             </h2>

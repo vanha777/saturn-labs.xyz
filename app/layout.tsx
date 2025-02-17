@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html data-theme="retro" lang="en">
+    <html className="bg-black" lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
