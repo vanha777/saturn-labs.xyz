@@ -22,18 +22,18 @@ const Consumer = () => {
     ];
 
     return (
-        <div className="container mx-auto p-4 md:p-20 bg-black/10 backdrop-blur-sm rounded-2xl text-gray-800 pb-20 md:pb-60">
+        <div className="container mx-auto p-4 md:p-20 text-white pb-20 md:pb-60">
             {/* First row: 2 columns on desktop, 1 column on mobile */}
             <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-3'} gap-4 mb-4`}>
                 <div className="bg-transparent p-4 col-span-2 rounded-2xl">
                     <h2 className="text-3xl md:text-5xl font-bold mb-2 text-[#bc6c25]">Saturn Labs</h2>
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">Build what matters</h2>
-                    <p className="text-base md:text-lg text-gray-600">Pitch us your idea—if it’s great, we’ll help you bring it to life.</p>
+                    <p className="text-base md:text-lg text-white">Pitch us your idea—if it's great, we'll help you bring it to life.</p>
                 </div>
                 <div className="card border-2 border-[#bc6c25] shadow-md rounded-2xl">
                     <div className="card-body flex flex-col items-center justify-center text-center">
                         <p className="text-3xl md:text-5xl font-bold text-[#bc6c25]">Saas</p>
-                        <p className="text-sm md:text-2sm mt-2 text-gray-600">Software that solve real world problems.</p>
+                        <p className="text-sm md:text-2sm mt-2 text-white">Software that solve real world problems.</p>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@ const Consumer = () => {
                 <div className="card border-2 border-[#bc6c25] shadow-md rounded-2xl">
                     <div className="card-body flex flex-col items-center justify-center text-center">
                         <p className="text-3xl md:text-5xl font-bold text-[#bc6c25]">DePin</p>
-                        <p className="text-sm md:text-2sm mt-2 text-gray-600">Change the world with Decentrailized Physical Infrastructure.</p>
+                        <p className="text-sm md:text-2sm mt-2 text-white">Change the world with Decentrailized Physical Infrastructure.</p>
                     </div>
                 </div>
                 <div className="cursor-pointer card bg-[#bc6c25] text-white shadow-md rounded-2xl">
