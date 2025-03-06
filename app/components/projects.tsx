@@ -7,25 +7,25 @@ import { FiExternalLink } from 'react-icons/fi';
 const Projects = () => {
   const showcaseProjects = [
     {
-      title: "FinTech Dashboard Platform",
-      description: "A comprehensive financial analytics platform for investment firms with real-time data processing, interactive visualizations, and secure API integration.",
+      title: "Account Abstraction",
+      description: "Developed an innovative account abstraction solution using Base's modular architecture, enabling seamless wallet interactions and gas-less transactions. Won Base sponsorship prize for best implementation.",
       image: "/showcase1.jpeg",
-      link: "#",
-      tags: ["React", "Node.js", "MongoDB", "AWS"]
+      link: "https://ethglobal.com/showcase/vanderlinde-bwgz6",
+      tags: ["Base", "Solidity", "Account Abstraction"]
     },
     {
-      title: "E-Commerce Mobile Application",
-      description: "Cross-platform mobile app with personalized shopping experience, integrated payment solutions, and real-time inventory management.",
+      title: "A First-Ever UBI On-Chain",
+      description: "We're taking a bold step to recreate a Universal Basic Income (UBI) experiment in New York, this time on the blockchain to ensure transparency, trust, and guaranteed distribution.",
       image: "/showcase2.jpeg",
-      link: "#",
-      tags: ["React Native", "Firebase", "Stripe API", "Redux"]
+      link: "https://ethglobal.com/showcase/saturn-foundation-4vzhb",
+      tags: ["Worldcoin", "Solidity", "UBI"]
     },
     {
-      title: "Enterprise Resource Planning System",
-      description: "Custom ERP solution for manufacturing businesses that streamlined operations, reduced costs by 35%, and improved overall productivity.",
+      title: "A Groundbreaking Gaming Universe",
+      description: "We provide game developers with a powerful tool to transform in-game items into real digital assets registered on the blockchain, offering players 100% ownership and the ability to withdraw items seamlessly.",
       image: "/showcase3.jpeg",
-      link: "#",
-      tags: ["Angular", "PostgreSQL", ".NET", "Azure"]
+      link: "https://ethglobal.com/showcase/metaloot-x5810",
+      tags: ["Solana", "NFT", "Games"]
     }
   ];
 
@@ -53,9 +53,9 @@ const Projects = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">Portfolio</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Recent Work</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Awards Winning</h2>
           <p className="text-lg text-gray-600">
-            Take a look at some of our recent projects that showcase our technical expertise and problem-solving capabilities.
+            Explore our recent achievements in technology hackathons, showcasing our technical expertise and innovative problem-solving skills.
           </p>
         </div>
 

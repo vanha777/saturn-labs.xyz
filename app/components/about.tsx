@@ -72,25 +72,25 @@ export default function About() {
               <div className="absolute inset-0 bg-gray-800 opacity-20"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-70"></div>
               {/* Replace with actual company image */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white text-4xl font-bold">Our Story</span>
-              </div>
+              <Image
+                src="/ourStory1.jpeg"
+                alt="Our Story"
+                fill
+                className="object-cover"
+              />
             </div>
           </motion.div>
 
           <motion.div variants={itemVariants}>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">A Legacy of Innovation</h3>
             <p className="text-gray-600 mb-6">
-              Founded in 2015, SaturnTech began with a simple mission: to create software that makes a difference. 
-              Our founders recognized that many organizations struggled to find development partners who truly understood
-              their business goals, not just technical requirements.
-            </p>
-            
-            <p className="text-gray-600 mb-6">
-              Today, we're proud to have grown into a full-service software development agency with over 50 experts across
-              design, development, and strategy. We've delivered 200+ successful projects for clients ranging from startups to enterprise organizations.
-            </p>
-            
+  At SaturnTech, we identified a critical gap in the market—where local businesses struggled to keep up with larger organizations. With the rise of AI, the playing field has leveled, allowing small to medium-sized businesses to scale faster and compete more effectively than ever before. 
+</p>
+
+<p className="text-gray-600 mb-6">
+  Our mission is simple: empower businesses of all sizes to harness the power of AI and innovative technology to transform their operations and achieve rapid growth. So, what are you waiting for? Let's take your business to the next level!
+</p>
+
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex items-center space-x-2">
                 <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
