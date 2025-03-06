@@ -91,13 +91,14 @@ const MainHero = () => {
                         transition={{ duration: 0.7 }}
                         className="relative"
                     >
-                        {/* Placeholder for a hero image - in a real project you'd use Image component with actual image */}
                         <div className="relative z-20 bg-white p-2 rounded-2xl shadow-2xl">
-                            <div className="aspect-[4/3] rounded-xl overflow-hidden bg-gray-200 relative">
+                            <div className="aspect-[4/3] rounded-xl overflow-hidden relative">
+                                <img
+                                    src="/ourStory2.jpeg"
+                                    alt="Our Story"
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                />
                                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20"></div>
-                                <div className="absolute inset-0 flex items-center justify-center text-primary/30 text-6xl font-bold">
-                                    SaturnTech
-                                </div>
                             </div>
                         </div>
 

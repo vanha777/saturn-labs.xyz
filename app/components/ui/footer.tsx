@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { FiTwitter, FiGithub, FiLinkedin, FiMail, FiArrowRight } from 'react-icons/fi';
+import { FiTwitter, FiGithub, FiLinkedin, FiMail, FiArrowRight, FiX } from 'react-icons/fi';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -39,9 +39,8 @@ const Footer = () => {
               We design and develop custom software solutions that help businesses solve complex problems and achieve their goals.
             </p>
             <div className="flex space-x-4">
-              <SocialLink href="https://twitter.com" icon={<FiTwitter />} label="Twitter" />
-              <SocialLink href="https://github.com" icon={<FiGithub />} label="GitHub" />
-              <SocialLink href="https://linkedin.com" icon={<FiLinkedin />} label="LinkedIn" />
+              <SocialLink href="https://x.com/patricksaturnor" icon={<FiX />} label="Twitter" />
+              <SocialLink href="https://www.linkedin.com/in/copycodervanjiro/" icon={<FiLinkedin />} label="LinkedIn" />
               <SocialLink href="mailto:devsaturnlabs@gmail.com" icon={<FiMail />} label="Email" />
             </div>
           </div>
