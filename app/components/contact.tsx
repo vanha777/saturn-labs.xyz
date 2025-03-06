@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiX, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { useState, useRef, useEffect } from 'react';
+import processCommand from '../ultilities/mod';
 
 const Contact = () => {
   const containerVariants = {
@@ -40,6 +42,46 @@ const Contact = () => {
     //   url: 'https://linkedin.com'
     // }
   ];
+
+  // Add new state for chat functionality
+  const [messages, setMessages] = useState([
+    { text: "Hi there! How can I help you today?", isBot: true }
+  ]);
+  const [inputMessage, setInputMessage] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+  const messagesEndRef = useRef(null);
+
+  // Function to scroll to bottom of chat
+  const scrollToBottom = () => {
+    if (messagesEndRef.current) {
+      (messagesEndRef.current as HTMLElement).scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Effect to scroll to bottom when messages change
+  // useEffect(() => {
+  //   scrollToBottom();
+  // }, [messages]);
+
+  // Function to handle user message and generate response
+  const handleSendMessage = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    if (!inputMessage.trim()) return;
+
+    // Add user message
+    const userMessage = { text: inputMessage, isBot: false };
+    setMessages(prev => [...prev, userMessage]);
+    setInputMessage("");
+
+    // Show typing indicator
+    setIsTyping(true);
+    const input = inputMessage.toLowerCase();
+    const response = await processCommand(input);
+    setMessages(prev => [...prev, { text: response, isBot: true }]);
+    setIsTyping(false);
+
+  };
 
   return (
     <section id="contact" className="py-24 bg-white">
@@ -133,86 +175,81 @@ const Contact = () => {
           </motion.div>
 
           <motion.div
-            className="md:col-span-3 bg-white shadow-sm rounded-xl p-8 border border-gray-100"
+            className="md:col-span-3 bg-gradient-to-br from-gray-900 to-gray-800 shadow-lg rounded-xl overflow-hidden"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            <motion.h3
-              className="text-2xl font-bold text-gray-900 mb-6"
+            <motion.div
+              className="p-6 border-b border-gray-700"
               variants={itemVariants}
             >
-              Send Us a Message
-            </motion.h3>
+              <h3 className="text-2xl font-bold text-white flex items-center">
+                <span className="h-3 w-3 rounded-full bg-green-400 mr-3 animate-pulse"></span>
+                AI Assistant
+              </h3>
+              <p className="text-gray-400 text-sm mt-1">Tell me how can we help your business</p>
+            </motion.div>
 
-            <form className="space-y-6">
-              <motion.div variants={itemVariants}>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <motion.div
+              className="h-96 overflow-y-auto p-6 bg-gray-800/50 backdrop-blur-sm"
+              variants={itemVariants}
+            >
+              <div className="space-y-4">
+                {messages.map((msg, index) => (
+                  <div
+                    key={index}
+                    className={`flex ${msg.isBot ? 'justify-start' : 'justify-end'}`}
+                  >
+                    <div
+                      className={`max-w-[80%] rounded-2xl px-4 py-3 ${msg.isBot
+                          ? 'bg-gray-700 text-white rounded-tl-none'
+                          : 'bg-primary text-white rounded-tr-none'
+                        }`}
+                    >
+                      {msg.text}
+                    </div>
+                  </div>
+                ))}
+                {isTyping && (
+                  <div className="flex justify-start">
+                    <div className="bg-gray-700 text-white rounded-2xl rounded-tl-none px-4 py-3">
+                      <div className="flex space-x-1">
+                        <div className="h-2 w-2 rounded-full bg-gray-400 animate-bounce"></div>
+                        <div className="h-2 w-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="h-2 w-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div ref={messagesEndRef} />
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="p-4 border-t border-gray-700"
+              variants={itemVariants}
+            >
+              <form onSubmit={handleSendMessage} className="flex items-center">
                 <input
                   type="text"
-                  id="name"
-                  className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary border p-3"
-                  placeholder="John Doe"
-                  required
+                  value={inputMessage}
+                  onChange={(e) => setInputMessage(e.target.value)}
+                  className="flex-1 bg-gray-700 text-white rounded-l-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-primary"
+                  placeholder="Type your message here..."
                 />
-              </motion.div>
-
-              <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6" variants={containerVariants}>
-                <motion.div variants={itemVariants}>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary border p-3"
-                    placeholder="john@example.com"
-                    required
-                  />
-                </motion.div>
-
-                <motion.div variants={itemVariants}>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary border p-3"
-                    placeholder="+1 (234) 567-890"
-                  />
-                </motion.div>
-              </motion.div>
-
-              <motion.div variants={itemVariants}>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary border p-3"
-                  placeholder="Project Inquiry"
-                  required
-                />
-              </motion.div>
-
-              <motion.div variants={itemVariants}>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary border p-3"
-                  placeholder="Tell us about your project, goals, and timeline..."
-                  required
-                ></textarea>
-              </motion.div>
-
-              <motion.div variants={itemVariants}>
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-md transition-colors flex items-center justify-center"
+                  className="bg-primary hover:bg-primary/90 text-white p-3 rounded-r-lg transition-colors"
                 >
-                  <span>Send Message</span>
-                  <FiSend className="ml-2 h-5 w-5" />
+                  <FiSend className="h-5 w-5" />
                 </button>
-              </motion.div>
-            </form>
+              </form>
+              <p className="text-xs text-gray-500 mt-2 text-center">
+                For detailed inquiries, consider booking a discovery call
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </div>
