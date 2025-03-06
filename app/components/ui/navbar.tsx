@@ -37,9 +37,14 @@ const Navbar: React.FC = () => {
             <NavLink href="/#work">Our Work</NavLink>
             <NavLink href="/#about">About</NavLink>
             <NavLink href="/#contact">Contact</NavLink>
-            <button className="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-md font-medium transition-colors">
+            <a 
+              href="https://calendly.com/vanha101096/30min"
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-md font-medium transition-colors"
+            >
               Get Started
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}

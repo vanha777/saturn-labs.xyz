@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { FiLinkedin, FiMail, FiArrowUpRight } from 'react-icons/fi';
+import { FiLinkedin, FiMail, FiArrowUpRight, FiX } from 'react-icons/fi';
 
 export default function About() {
   const containerVariants = {
@@ -31,19 +31,21 @@ export default function About() {
   const teamMembers = [
     {
       name: "Patrick Ha",
-      role: "Founder & Chief Technology Officer",
-      bio: "Over 10 years experience building enterprise software solutions. Expert in cloud architecture and blockchain technology.",
+      role: "Product Egnineer",
+      bio: "Product strategist with expertise in user experience and market analysis.",
       image: "/founder11.jpeg",
-      linkedin: "https://linkedin.com",
-      email: "patrick@saturntech.dev"
+      linkedin: "https://www.linkedin.com/in/copycodervanjiro/",
+      email: "vanha101096@gmail.com",
+      x: "https://x.com/patricksaturnor"
     },
     {
       name: "Roman Lobanov",
-      role: "Co-Founder & Chief Product Officer",
-      bio: "Product strategist with expertise in user experience and market analysis. Former UX lead at Fortune 500 tech companies.",
+      role: "Chief Technology Officer",
+      bio: "Over 10 years experience building enterprise software solutions. Expert in cloud architecture and blockchain technology.",
       image: "/founder2.jpeg",
-      linkedin: "https://linkedin.com",
-      email: "roman@saturntech.dev"
+      linkedin: "https://www.linkedin.com/in/roman-lobanov-b8122198/",
+      email: "complexia701@gmail.com",
+      x: "https://x.com/ComplexiaSC"
     }
   ]
 
@@ -155,18 +157,26 @@ export default function About() {
                   <p className="text-gray-600 mb-4">{member.bio}</p>
                   <div className="flex items-center space-x-4">
                     <a
-                      href={member.linkedin}
+                      href={member.x}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-500 hover:text-primary transition-colors"
                     >
-                      <FiLinkedin className="h-5 w-5" />
+                      <FiX className="h-5 w-5" />
                     </a>
                     <a
                       href={`mailto:${member.email}`}
                       className="text-gray-500 hover:text-primary transition-colors"
                     >
                       <FiMail className="h-5 w-5" />
+                    </a>
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-500 hover:text-primary transition-colors"
+                    >
+                      <FiLinkedin className="h-5 w-5" />
                     </a>
                   </div>
                 </div>

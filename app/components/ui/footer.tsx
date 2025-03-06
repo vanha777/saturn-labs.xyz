@@ -42,7 +42,7 @@ const Footer = () => {
               <SocialLink href="https://twitter.com" icon={<FiTwitter />} label="Twitter" />
               <SocialLink href="https://github.com" icon={<FiGithub />} label="GitHub" />
               <SocialLink href="https://linkedin.com" icon={<FiLinkedin />} label="LinkedIn" />
-              <SocialLink href="mailto:info@saturntech.dev" icon={<FiMail />} label="Email" />
+              <SocialLink href="mailto:devsaturnlabs@gmail.com" icon={<FiMail />} label="Email" />
             </div>
           </div>
           

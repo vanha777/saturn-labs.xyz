@@ -12,12 +12,12 @@ const MainHero = () => {
             <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-radial from-blue-100/50 to-transparent"></div>
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
             <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-            
+
             {/* Grid pattern */}
             <div className="absolute inset-0 opacity-[0.03]" style={{
                 backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             }}></div>
-            
+
             {/* Content Container */}
             <div className="relative z-10 container mx-auto px-4 h-screen flex flex-col md:flex-row items-center">
                 <div className="w-full md:w-1/2 pt-32 md:pt-0">
@@ -31,20 +31,19 @@ const MainHero = () => {
                             Software Development Agency
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                            We Build <span className="text-primary">Digital</span> Solutions That <span className="text-primary">Transform</span> Businesses
+                            Scale Your Business Faster with <span className="text-primary">AI-Powered Automation</span>
                         </h1>
                     </motion.div>
-                    
-                    <motion.p 
+
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="text-lg text-gray-600 mb-10 max-w-xl"
                     >
-                        Our team of experts creates custom web, mobile, and enterprise applications 
-                        that drive growth and improve efficiency for businesses worldwide.
+                        We help small to medium businesses eliminate bottlenecks with smart automation—everything from social media scheduling and customer retention programs to advanced CRM systems and complex consumer apps.
                     </motion.p>
-                    
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -59,7 +58,7 @@ const MainHero = () => {
                             View Our Services
                         </a>
                     </motion.div>
-                    
+
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -67,13 +66,13 @@ const MainHero = () => {
                         className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-8"
                     >
                         <div className="flex flex-col items-center">
-                            <div className="text-2xl font-bold text-primary">200+</div>
+                            <div className="text-2xl font-bold text-primary">10+</div>
                             <div className="text-sm text-gray-500">Projects Completed</div>
                         </div>
-                        <div className="flex flex-col items-center">
+                        {/* <div className="flex flex-col items-center">
                             <div className="text-2xl font-bold text-primary">50+</div>
                             <div className="text-sm text-gray-500">Team Members</div>
-                        </div>
+                        </div> */}
                         <div className="flex flex-col items-center">
                             <div className="text-2xl font-bold text-primary">10+</div>
                             <div className="text-sm text-gray-500">Years Experience</div>
@@ -84,7 +83,7 @@ const MainHero = () => {
                         </div>
                     </motion.div>
                 </div>
-                
+
                 <div className="hidden md:block w-1/2 relative">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -101,7 +100,7 @@ const MainHero = () => {
                                 </div>
                             </div>
                         </div>
-                        
+
                         {/* Decorative elements */}
                         <div className="absolute top-1/2 -left-8 transform -translate-y-1/2 w-16 h-16 bg-accent rounded-lg -rotate-12 shadow-lg"></div>
                         <div className="absolute -bottom-5 right-10 transform w-24 h-24 bg-primary/10 rounded-full"></div>

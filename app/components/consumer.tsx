@@ -37,8 +37,8 @@ const Services = () => {
     },
     {
       icon: <FiShield className="h-7 w-7" />,
-      title: "DevOps & Security",
-      description: "Streamline your development pipeline with continuous integration and delivery while maintaining robust security.",
+      title: "AI Implementation",
+      description: "Automate manual tasks and streamline operations with custom AI solutions that save time and let you focus on growing your business.",
       color: "orange"
     }
   ];
