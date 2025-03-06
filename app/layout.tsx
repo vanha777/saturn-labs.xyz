@@ -20,8 +20,8 @@ import LayoutClient from "./layout-client";
 // import { config } from '../config'
 
 export const metadata: Metadata = {
-  title: 'Saturn Foundation',
-  description: "The World's First On-Chain UBI.",
+  title: 'SaturnTech | Software Development Agency',
+  description: "Transform your ideas into powerful digital solutions. We build high-performance web, mobile, and enterprise applications.",
   icons: {
     icon: '/favicon.ico',
   },
@@ -34,11 +34,12 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html className="bg-black" lang="en">
+    <html data-theme="agency" className="bg-white scroll-smooth" lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
       </head>
-      <body>
+      <body className="antialiased">
           {children}
       </body>
     </html>

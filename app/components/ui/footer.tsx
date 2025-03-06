@@ -1,40 +1,133 @@
 "use client";
 
-import { FaDiscord, FaEnvelope } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import Link from 'next/link';
+import { FiTwitter, FiGithub, FiLinkedin, FiMail, FiArrowRight } from 'react-icons/fi';
 
 const Footer = () => {
-    return (
-        <div className="btm-nav z-50 bg-black/30 backdrop-blur-sm">
-            <button
-                onClick={() => window.open("https://x.com/TheSaturnFund", "_blank", "noopener noreferrer")}
-                className="relative overflow-hidden group bg-transparent"
-            >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#bc6c25]/50 to-[#bc6c25]/30 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="absolute inset-0 group-hover:shadow-[inset_0_0_8px_rgba(188,108,37,0.5)] transition-all"></div>
-                <FaXTwitter className="h-8 w-8 relative text-white/90 group-hover:text-white transition-colors" />
-                <span className="btm-nav-label relative text-white/90 group-hover:text-white transition-colors">Twitter</span>
-            </button>
-            <button
-                onClick={() => window.open("https://discord.gg/U7WJBdCtjv", "_blank", "noopener noreferrer")}
-                className="relative overflow-hidden group bg-transparent"
-            >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#bc6c25]/50 to-[#bc6c25]/30 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="absolute inset-0 group-hover:shadow-[inset_0_0_8px_rgba(188,108,37,0.5)] transition-all"></div>
-                <FaDiscord className="h-8 w-8 relative text-white/90 group-hover:text-white transition-colors" />
-                <span className="btm-nav-label relative text-white/90 group-hover:text-white transition-colors">Discord</span>
-            </button>
-            <button 
-                onClick={() => window.open("mailto:contact@saturnlabs.org", "_blank", "noopener noreferrer")}
-                className="relative overflow-hidden group bg-transparent"
-            >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#bc6c25]/50 to-[#bc6c25]/30 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="absolute inset-0 group-hover:shadow-[inset_0_0_8px_rgba(188,108,37,0.5)] transition-all"></div>
-                <FaEnvelope className="h-8 w-8 relative text-white/90 group-hover:text-white transition-colors" />
-                <span className="btm-nav-label relative text-white/90 group-hover:text-white transition-colors">Email</span>
-            </button>
-        </div>
-    )
-}
+  const currentYear = new Date().getFullYear();
+  
+  const quickLinks = [
+    { title: 'Services', href: '/#services' },
+    { title: 'Portfolio', href: '/#work' },
+    { title: 'About', href: '/#about' },
+    { title: 'Contact', href: '/#contact' },
+  ];
+  
+  const serviceLinks = [
+    { title: 'Web Development', href: '/#services' },
+    { title: 'Mobile Apps', href: '/#services' },
+    { title: 'UI/UX Design', href: '/#services' },
+    { title: 'Cloud Solutions', href: '/#services' },
+  ];
 
-export default Footer
+  const legalLinks = [
+    { title: 'Privacy Policy', href: '#' },
+    { title: 'Terms of Service', href: '#' },
+  ];
+
+  return (
+    <footer className="bg-gray-900 text-white pt-16 pb-8">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+          <div className="lg:col-span-2">
+            <Link href="/" className="inline-block mb-6">
+              <h2 className="text-2xl font-bold text-white">
+                <span className="text-primary">Saturn</span>Tech
+              </h2>
+            </Link>
+            <p className="text-gray-400 mb-6 max-w-md">
+              We design and develop custom software solutions that help businesses solve complex problems and achieve their goals.
+            </p>
+            <div className="flex space-x-4">
+              <SocialLink href="https://twitter.com" icon={<FiTwitter />} label="Twitter" />
+              <SocialLink href="https://github.com" icon={<FiGithub />} label="GitHub" />
+              <SocialLink href="https://linkedin.com" icon={<FiLinkedin />} label="LinkedIn" />
+              <SocialLink href="mailto:info@saturntech.dev" icon={<FiMail />} label="Email" />
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-3">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.href} className="text-gray-400 hover:text-primary transition-colors">
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <ul className="space-y-3">
+              {serviceLinks.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.href} className="text-gray-400 hover:text-primary transition-colors">
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Subscribe</h3>
+            <p className="text-gray-400 mb-4">
+              Stay updated with our latest news and offers.
+            </p>
+            <form className="flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                className="bg-gray-800 text-gray-300 px-4 py-2 rounded-l-md focus:outline-none focus:ring-1 focus:ring-primary w-full"
+              />
+              <button
+                type="submit"
+                className="bg-primary hover:bg-primary/90 text-white px-3 rounded-r-md flex items-center justify-center transition-colors"
+              >
+                <FiArrowRight />
+              </button>
+            </form>
+          </div>
+        </div>
+        
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+              &copy; {currentYear} SaturnTech. All rights reserved.
+            </p>
+            <div className="flex space-x-6">
+              {legalLinks.map((link, index) => (
+                <Link 
+                  key={index} 
+                  href={link.href} 
+                  className="text-gray-400 hover:text-primary text-sm transition-colors"
+                >
+                  {link.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+const SocialLink = ({ href, icon, label }: { href: string, icon: React.ReactNode, label: string }) => {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-gray-800 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+      aria-label={label}
+    >
+      {icon}
+    </a>
+  );
+};
+
+export default Footer;
