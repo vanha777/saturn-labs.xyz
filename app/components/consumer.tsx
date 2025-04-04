@@ -67,7 +67,7 @@ const Services = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">Our Services</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Personalized AI Automation for Businesses</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Personalized Software Development for Businesses</h2>
           <p className="text-lg text-gray-600">
           We automate tasks, enhance user experiences, and boost data analytics with AI.
           </p>

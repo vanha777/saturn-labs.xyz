@@ -28,10 +28,10 @@ const MainHero = () => {
                         className="mb-6"
                     >
                         <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary font-medium text-sm mb-4">
-                            Software Development Agency
+                            Transforming Ideas
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                            Scale Your Business Faster with <span className="text-primary">AI-Powered Automation</span>
+                            Elevate Your <span className="text-primary bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Digital Presence</span>
                         </h1>
                     </motion.div>
 
@@ -41,7 +41,7 @@ const MainHero = () => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="text-lg text-gray-600 mb-10 max-w-xl"
                     >
-                        We help small to medium businesses eliminate bottlenecks with smart automation—everything from social media scheduling and customer retention programs to advanced CRM systems and complex consumer apps.
+                        We're passionate about building awesome digital experiences - from sleek websites and powerful apps to smart automation tools that make life easier. Let's create something amazing together.
                     </motion.p>
 
                     <motion.div
